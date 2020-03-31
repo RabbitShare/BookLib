@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .container > * {
+        margin: 5px;
+    }
+
+.list-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 5px;
+}
+
+    .list-container > div {
+        border: 1px solid black;
+        padding: 5px
+    }
+
+.form-container {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+    .form-container > * {
+        display: flex;
+        flex-flow: column wrap;
+        margin: 3px;
+    }
+
+button {
+    height: 20px;
+}

@@ -1,0 +1,38 @@
+version: '3.4'
+
+services:
+  server:
+    image: ${DOCKER_REGISTRY-}server
+    build:
+      context: .
+      dockerfile: Server/Dockerfile
+    depends_on:
+      -  postgres
+    networks:
+      -  server-db-network
+      -  server-client-network
+
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: password
+    networks:
+      -  server-db-network
+  
+  client:
+    image: ${DOCKER_REGISTRY-}client
+    build:
+      context: ./Client
+      dockerfile: ./Dockerfile
+    depends_on:
+      -  server
+    networks:
+      -  server-client-network
+    environment:
+      -  LIB_URL=server-client-network
+
+networks:
+  server-db-network:
+    driver: bridge
+  server-client-network:
+    driver: bridge

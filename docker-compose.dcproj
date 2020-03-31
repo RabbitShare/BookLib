@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" Sdk="Microsoft.Docker.Sdk">
+  <PropertyGroup Label="Globals">
+    <ProjectVersion>2.1</ProjectVersion>
+    <DockerTargetOS>Linux</DockerTargetOS>
+    <ProjectGuid>5243c08c-1d94-48b0-aded-f43c51f8101a</ProjectGuid>
+    <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
+    <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/api/book</DockerServiceUrl>
+    <DockerServiceName>server</DockerServiceName>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="Client\.gitignore" />
+    <None Include="Client\Dockerfile" />
+    <None Include="Client\package.json" />
+    <None Include="Client\public\favicon.ico" />
+    <None Include="Client\public\index.html" />
+    <None Include="Client\public\logo192.png" />
+    <None Include="Client\public\logo512.png" />
+    <None Include="Client\public\manifest.json" />
+    <None Include="Client\public\robots.txt" />
+    <None Include="Client\README.md" />
+    <None Include="Client\src\App.css" />
+    <None Include="Client\src\App.tsx" />
+    <None Include="Client\src\components\AddBookItem.tsx" />
+    <None Include="Client\src\components\BookItem.tsx" />
+    <None Include="Client\src\components\BookItemForm.tsx" />
+    <None Include="Client\src\components\BookList.tsx" />
+    <None Include="Client\src\components\EditBookItem.tsx" />
+    <None Include="Client\src\index.tsx" />
+    <None Include="Client\src\react-app-env.d.ts" />
+    <None Include="Client\src\services\BookService.ts" />
+    <None Include="Client\src\types\Book.ts" />
+    <None Include="Client\src\types\Guid.ts" />
+    <None Include="Client\tsconfig.json" />
+    <None Include="Client\yarn.lock" />
+    <None Include="docker-compose.override.yml">
+      <DependentUpon>docker-compose.yml</DependentUpon>
+    </None>
+    <None Include="docker-compose.yml" />
+    <None Include=".dockerignore" />
+  </ItemGroup>
+</Project>
